@@ -1,0 +1,23 @@
+1,__new__与__init__区别
+	实例化一个类的时候是先调用__new__方法，然后给__init__进行初始化，前者必须有返回值，后者必须没有。
+	当我们需要控制object的创建操作时，我们需要重写__new__方法；当我们需要控制object的初始化操作时，我们需要重写__init__方法
+2，__staticmethod__与__classmethod__区别
+class Test(object):
+	d = 4
+	def __init__(self):
+		self.c=1
+		print 'init'
+	@staticmethod
+	def smethod(a):
+		return a+1
+	@classmethod
+	def cmethod(cls):
+		return cls.d+2
+
+	创建的时候区别：static的创建和普通函数一样.
+					class需要传入cls参数，代表这个类.
+	使用的时候：都可以通过Test不需实例化访问，static实例化之后也可以访问，class实例化后不可以访问.
+				static不可以访问类内部的方法，而class可以，因为它默认传入了类为参数，所以在class函数里可以直接用.
+				用static也可以实现class的功能，只需要在调用的时候将类作为参数穿进去，不过麻烦啊。
+
+

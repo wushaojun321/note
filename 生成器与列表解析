@@ -1,0 +1,6 @@
+1,列表推导式：直接生成列表（其实内部还是先生成迭代器，可用dis测试）
+2，迭代器：延迟加载，节省内存，相比于推导式，少执行了一步，实现了next方法
+3，生成器：特殊的迭代器，但是比一般的迭代器优雅（https://foofish.net/what-is-python-generator.html） 它除了用(i for i in range(10))实现外，还可用带yield的函数实现
+
+
+

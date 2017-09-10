@@ -1,0 +1,46 @@
+查看所有：keys *
+创建字符串：SET
+查看字符串：GET
+MSET
+MGET
+
+
+散列值操作
+创建散列值：HSET key field value
+查看散列值：HGET key field
+如果不知道key里面的field：HGETALL key或者HKEYS key或者HVALS key
+判断key里有没有field：HEXISTS key field
+当key里的value不存在时赋值，存在时不做操作：HSETNX key field value
+查看key里的条目数：HLEN key
+
+列表操作
+创建列表，从左边插入数据：LPUSH key 1 2 3
+查看列表，相当于切片操作ll[0:-1]，但是返回值包括最后一个索引：lrange key 0 -1
+弹出删除：LPOP KEY或RPOP KEY
+查看长度：LLEN KEY
+删除count个指定值：LREM KEY count value（当count<0时从右往左；conut=0时删除全部指定值）
+修改指定索引的值：LSET key index value
+获取指定索引的值：LINDEX key index
+取切片，将会删除切片之外的值：LTRIM key start end
+在指定数据的前面或者后面插入数据：
+									127.0.0.1:6379> lrange ll 0 -1
+									1) "7"
+									2) "6"
+									3) "4"
+									4) "3"
+									5) "1"
+									6) "34"
+									7) "2"
+									127.0.0.1:6379> linsert ll before 1 10
+									(integer) 8
+									127.0.0.1:6379> lrange ll 0 -1
+									1) "7"
+									2) "6"
+									3) "4"
+									4) "3"
+									5) "10"
+									6) "1"
+									7) "34"
+									8) "2"
+
+

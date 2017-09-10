@@ -1,0 +1,7 @@
+   ASCII它是由美国人发明的，符合他们的使用习惯，由一个字节（8个比特）组成最多可表示255，但是其他国家不能用啊，于是自己就搞了GBK（中国），Shift_JIS（日本）
+Euc-kr（韩国），这样就太乱了，大家一起商量就搞了个Unicode，用两个字节表示一个字，但是美国人不同意了，为什么我们本来只需要一个字节就可以表示一个字，现在非
+得用两个，增加了一倍的内存，所以又搞出了UTF8，UTF8里包含的ASCII码是用一个字节表示，其他的一般用两个字节表示。所以如果文件里面ASCII较多的话用utf8比Unicode节省内存。
+python2.X里：
+	Unicode.encode('utf8')#将Unicode变为utf8
+	utf8.decode('unicode')#将utf8变为unicode
+GBK也一样
