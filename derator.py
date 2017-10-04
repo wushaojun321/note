@@ -1,3 +1,5 @@
+#encoding:utf8
+'''
 原理：python里面所有东西都是对象，函数也是，装饰器原理是将被装饰函数作为参数传入到装饰函数里面去，可以为函数增加功能（打印日志写一个）
 	>>> def my_decorator(func):
 	...     def wrap(*arg,**kwarg):
@@ -15,3 +17,16 @@
 	>>> my_hello('wsj')
 	('wsj',) {}
 	'wsjhello!'
+'''
+def decorator(func):
+	def wrap(*args,**kw):
+		print '*'*40 + 'start!' + '*'*40
+		print func(*args,**kw)
+		print '*'*40 + 'end!' + '*'*40
+	return wrap
+
+@decorator
+def hello():
+	return 'hello ,wsj!'
+
+hello()
