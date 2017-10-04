@@ -27,3 +27,17 @@ class Singleton1(object):
 		ob.__dict__ = cls._state
 		return ob
 
+#方法三
+def decorator(cls):
+	instance = {}
+	def wrap(*args,**kw):
+		if not cls in instance:
+			instance[cls] = cls(*args,**kw)
+		return instance[cls]
+	return wrap
+
+@decorator
+class myclass(object):
+	a = 1
+
+
