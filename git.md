@@ -30,4 +30,17 @@ git push
    git config http.sslVerify false #关掉不验证
    ```
 
-   
+
+### git配置
+
+- 命令行
+
+  ```bash
+  git config --system user.name # 对应/etc/gitconfig
+  git config --global user.name # 对应~/.gitconfig
+  git config user.name # 对应./.git/config
+  ```
+
+  下面的优先级最高
+
+  
