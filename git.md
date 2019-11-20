@@ -54,4 +54,7 @@ git push
 ### git rm
 
 - git将删除文件和追踪
-- 
+
+### git commit -amend -m "xxx"
+
+- 提交到上一次的commit中，如果暂存区为空，会覆盖msg
