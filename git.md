@@ -41,6 +41,17 @@ git push
   git config user.name # 对应./.git/config
   ```
 
-  下面的优先级最高
+  从上到下，优先级越来越高
 
   
+
+
+
+### git rm --cached
+
+- 不删除文件，删除add，git将不再追踪它
+
+### git rm
+
+- git将删除文件和追踪
+- 
