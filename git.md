@@ -58,3 +58,7 @@ git push
 ### git commit -amend -m "xxx"
 
 - 提交到上一次的commit中，如果暂存区为空，会覆盖msg
+
+### git diff --staged
+
+- 只显示add之后的，也就是下一次commit提交的
